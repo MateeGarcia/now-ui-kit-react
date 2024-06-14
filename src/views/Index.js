@@ -42,6 +42,7 @@ function Index() {
       <IndexNavbar />
       <div className="wrapper">
         <IndexHeader />
+        
         <div className="main">
           {/* <Images />
           <BasicElements />
@@ -53,10 +54,11 @@ function Index() {
           <Javascript />
           <Carousel />
           <NucleoIcons />
-          <CompleteExamples />
           <SignUp />
+          <CompleteExamples />
           <Examples />
           <Download /> */}
+          
         </div>
         <DarkFooter />
       </div>
