@@ -24,13 +24,6 @@ function LandingPageHeader() {
   return (
     <>
       <div className="page-header page-header-small">
-        <div
-          className="page-header-image"
-          style={{
-            backgroundImage: "url(" + require("assets/img/bg6.jpg") + ")"
-          }}
-          ref={pageHeader}
-        ></div>
         <div className="content-center">
           <Container>
             <h1 className="title">This is our great company.</h1>

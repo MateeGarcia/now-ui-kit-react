@@ -23,7 +23,7 @@ function TransparentFooter() {
                 href="http://presentation.creative-tim.com?ref=nukr-transparent-footer"
                 target="_blank"
               >
-                About Us
+                Sobre nosotros
               </a>
             </li>
             <li>

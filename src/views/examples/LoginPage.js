@@ -38,12 +38,6 @@ function LoginPage() {
     <>
       <ExamplesNavbar />
       <div className="page-header clear-filter" filter-color="blue">
-        <div
-          className="page-header-image"
-          style={{
-            backgroundImage: "url(" + require("assets/img/login.jpg") + ")"
-          }}
-        ></div>
         <div className="content">
           <Container>
             <Col className="ml-auto mr-auto" md="4">
