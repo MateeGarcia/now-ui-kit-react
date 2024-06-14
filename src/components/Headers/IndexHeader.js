@@ -4,6 +4,7 @@ import React from "react";
 // reactstrap components
 import { Col, Row, Container } from "reactstrap";
 import EstadoDenuncia from "views/index-sections/EstadoDenuncia";
+import IngresarDenuncia from "views/index-sections/IngresarDenuncia";
 // core components
 
 import '../../assets/css/IndexHeader.css'
@@ -46,10 +47,14 @@ function IndexHeader() {
             </Col>
             <Col>
               <EstadoDenuncia/>
+              <Row style={{ height: '3vh' }}></Row>
+              <IngresarDenuncia/>
             </Col>
           </Row>
+
         </Container>
         
+
       </div>
     </>
   );
