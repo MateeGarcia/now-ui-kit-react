@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logoDroidy from '../../assets/img/droidyBlue.png';
+import '../../assets/new_css/new-css.css'
 // reactstrap components
 import {
   Button,
@@ -20,6 +22,18 @@ import {
 function IndexNavbar() {
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
   const [collapseOpen, setCollapseOpen] = React.useState(false);
+  const [navBarComponents, setNavBarComponents] = React.useState([
+    {nombre: 'Bienvenido',
+    href: '#'},
+    {nombre: 'Funcionamiento',
+      href: '#'},
+    {nombre: 'Valores y principios',
+      href: '#'},
+    {nombre: 'Modelo integrado de cumplimiento',
+      href: '#'},
+      {nombre: 'Preguntas frecuentes',
+        href: '#'}]);
+
   React.useEffect(() => {
     const updateNavbarColor = () => {
       if (
@@ -39,6 +53,8 @@ function IndexNavbar() {
       window.removeEventListener("scroll", updateNavbarColor);
     };
   });
+
+  
   return (
     <>
       {collapseOpen ? (
@@ -51,18 +67,16 @@ function IndexNavbar() {
         />
       ) : null}
       <Navbar className={"fixed-top " + navbarColor} expand="lg" color="info">
-        <Container>
+       <Container>
           <div className="navbar-translate">
             <NavbarBrand
-              href="https://demos.creative-tim.com/now-ui-kit-react/#/index?ref=nukr-index-navbar"
               target="_blank"
-              id="navbar-brand"
-            >
+              id="navbar-brand">
               -Nombre empresa-
             </NavbarBrand>
-            <UncontrolledTooltip target="#navbar-brand">
-            Diseñado por SGR Technology
-            </UncontrolledTooltip>
+            {/* <UncontrolledTooltip target="#navbar-brand" className="custom-tooltip" >
+            <img src={logoDroidy} alt="Ejemplo" style={{ width: '70px', height: 'auto', margin: ''}} />
+            </UncontrolledTooltip> */}
             <button
               className="navbar-toggler navbar-toggler"
               onClick={() => {
@@ -83,70 +97,22 @@ function IndexNavbar() {
             navbar
           >
             <Nav navbar>
-              <NavItem>
-                <NavLink
-                  href="#pablo"
-                  onClick={(e) => {
-                    console.log("clickeo bienvenida")
-                  }}
-                >
+              {navBarComponents.map((item)=>{
+                if (item.onClick){
+                  return (<NavLink href="#pablo" onClick={(e) => {console.log("clickeo bienvenida")}}>
                   <i className="now-ui-icons arrows-1_cloud-download-93"></i>
                   <p>Bienvenida</p>
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  href="#pablo"
-                  onClick={(e) => {
-                    console.log("clickeo bienvenida")
-                  }}
-                >
-                  <p>Funcionamiento</p>
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  href="#pablo"
-                  onClick={(e) => {
-                    console.log("clickeo bienvenida")
-                  }}
-                >
-                  <p>Valores y principios</p>
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  href="#pablo"
-                  onClick={(e) => {
-                    console.log("clickeo bienvenida")
-                  }}
-                >
-                  <p>Codigo de conducta</p>
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  href="#pablo"
-                  onClick={(e) => {
-                    console.log("clickeo bienvenida")
-                  }}
-                >
-                  <p>Modelo integrado de cumplimiento</p>
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  href="#pablo"
-                  onClick={(e) => {
-                    console.log("clickeo bienvenida")
-                  }}
-                >
-                  <p>Preguntas frecuentes</p>
-                </NavLink>
-              </NavItem>
+                  </NavLink>)
+                }else{
+                  return (<NavLink href="#pablo" onClick={(e) => {console.log("clickeo bienvenida")}}>
+                  <i className="now-ui-icons arrows-1_cloud-download-93"></i>
+                  <p>Bienvenida</p>
+                  </NavLink>)
+                }
+              })}
             </Nav>
           </Collapse>
-        </Container>
+        </Container> 
       </Navbar>
     </>
   );
